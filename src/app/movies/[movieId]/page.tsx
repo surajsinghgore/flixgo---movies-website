@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import MoviesData from "../../../data/MoviesData";
 
+// Define the Movie type
 interface Movie {
   id: string;
   image: string;
@@ -12,7 +13,14 @@ interface Movie {
   rating: number;
 }
 
-const Page: React.FC<{ params: { movieId: string } }> = ({ params }) => {
+// Explicitly type the params as an object with movieId
+interface PageProps {
+  params: {
+    movieId: string;
+  };
+}
+
+const Page: React.FC<PageProps> = ({ params }) => {
   const { movieId } = params;
 
   // State to store the movie data
