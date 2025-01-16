@@ -1,5 +1,9 @@
-import Image from "next/image";
+import NewMoviesCard from "@/components/Home/NewMoviesCard";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <NewMoviesCard />
+    </>
+  );
 }

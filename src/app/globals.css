@@ -23,6 +23,13 @@ body {
 .signInBtn {
   background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
 }
+
+/* NewMoviesCard */
+.NewMoviesCard {
+  background-color: #303030;
+}
+
+/* Footer top line styling */
 footer:before {
   content: "";
   position: absolute;
