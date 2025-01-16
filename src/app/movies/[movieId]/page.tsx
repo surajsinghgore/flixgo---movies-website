@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -12,15 +12,10 @@ interface Movie {
   rating: number;
 }
 
-interface PageProps {
-  params: {
-    movieId: string;
-  };
-}
-
-const Page: React.FC<PageProps> = ({ params }) => {
+const Page: React.FC<{ params: { movieId: string } }> = ({ params }) => {
   const { movieId } = params;
 
+  // State to store the movie data
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
