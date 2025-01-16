@@ -24,7 +24,7 @@ const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <Link href="#" className="text-sm/6 font-sm text-white">
+          <Link href="/" className="text-sm/6 font-sm text-white">
             HOME
           </Link>
           <Link href="#" className="text-sm/6 font-sm text-white">
