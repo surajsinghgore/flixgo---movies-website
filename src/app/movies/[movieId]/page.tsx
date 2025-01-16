@@ -1,9 +1,9 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import MoviesData from "../../../data/MoviesData";
 
-// Define the Movie type
 interface Movie {
   id: string;
   image: string;
@@ -19,9 +19,8 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
-  const { movieId } = React.use(params);
+  const { movieId } = params;
 
-  // State to store the movie data
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +28,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
   useEffect(() => {
     const fetchMovie = () => {
       const foundMovie = MoviesData.find((movie) => movie.id === movieId);
-   
       if (!foundMovie) {
         setError("Movie not found");
       } else {
@@ -46,23 +44,25 @@ const Page: React.FC<PageProps> = ({ params }) => {
   }
 
   if (error) {
-    return <div>{error}</div>; 
+    return <div>{error}</div>;
   }
 
   if (!movie) {
-    return <div>No movie found</div>; 
+    return <div>No movie found</div>;
   }
-
-
 
   return (
     <div className="my-16">
       <h1 className="text-center py-2">Movie ID: {movieId}</h1>
-{console.log(movie)}
       <div className="flex justify-center ">
         <div className="relative w-[250px] h-[400px] sm:h-[350px] md:h-[400px]">
           <Image src={movie.image} alt={movie.title} layout="fill" objectFit="cover" className="rounded-sm" />
         </div>
+      </div>
+      <div className="text-center mt-4">
+        <h2 className="text-xl text-white">{movie.title}</h2>
+        <p className="text-sm text-gray-400">{movie.action}</p>
+        <p className="text-lg text-yellow-400">{movie.rating}</p>
       </div>
     </div>
   );
