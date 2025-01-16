@@ -5,7 +5,6 @@ import Image from "next/image";
 import MoviesData from "../../../data/MoviesData";
 import { FaStar } from "react-icons/fa";
 
-// Define the Movie type
 interface Movie {
   id: string;
   image: string;
@@ -14,16 +13,13 @@ interface Movie {
   rating: number;
 }
 
-// Explicitly type the params as an object with movieId
 interface PageProps {
   params: Promise<{ movieId: string }>;
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
-  // Unwrap params using React.use() since it's a Promise
   const { movieId } = React.use(params);
 
-  // State to store the movie data
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
