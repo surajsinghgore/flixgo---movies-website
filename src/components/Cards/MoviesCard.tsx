@@ -11,7 +11,6 @@ type MoviesCardProps = {
 };
 
 const MoviesCard: React.FC<MoviesCardProps> = ({ id, image, title, action, rating }) => {
-  console.log(id);
   return (
     <Link href={`/movies/${id}`}>
       <div className="card max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto p-4 cursor-pointer">

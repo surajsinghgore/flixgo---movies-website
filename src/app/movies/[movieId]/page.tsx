@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import MoviesData from "../../../data/MoviesData";
+import { FaStar } from "react-icons/fa";
 
 // Define the Movie type
 interface Movie {
@@ -15,13 +16,12 @@ interface Movie {
 
 // Explicitly type the params as an object with movieId
 interface PageProps {
-  params: {
-    movieId: string;
-  };
+  params: Promise<{ movieId: string }>;
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
-  const { movieId } = params;
+  // Unwrap params using React.use() since it's a Promise
+  const { movieId } = React.use(params);
 
   // State to store the movie data
   const [movie, setMovie] = useState<Movie | null>(null);
@@ -63,9 +63,12 @@ const Page: React.FC<PageProps> = ({ params }) => {
         </div>
       </div>
       <div className="text-center mt-4">
-        <h2 className="text-xl text-white">{movie.title}</h2>
+        <h2 className="text-xl text-black font-bold">{movie.title}</h2>
         <p className="text-sm text-gray-400">{movie.action}</p>
-        <p className="text-lg text-yellow-400">{movie.rating}</p>
+        <div className="flex items-center justify-center gap-1">
+          <FaStar className="text-yellow-400" />
+          <span className="text-md font-bold text-black">{movie.rating}</span>
+        </div>
       </div>
     </div>
   );
