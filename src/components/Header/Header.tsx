@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="#" className="text-sm/6 font-sm text-white">
+          <Link href="/login" className="text-sm/6 font-sm text-white">
             <button className="signInBtn px-10 py-2 rounded-sm">SIGN IN</button>
           </Link>
         </div>
