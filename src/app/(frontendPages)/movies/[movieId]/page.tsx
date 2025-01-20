@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import MoviesData from "../../../data/MoviesData";
+import MoviesData from "../../../../data/MoviesData";
 import { FaStar } from "react-icons/fa";
 
 interface Movie {

@@ -1,5 +1,5 @@
 
-const allMoviesData = {
+const AllMoviesData = {
   data: [
     {
       id: "1",
@@ -150,4 +150,4 @@ const allMoviesData = {
   }
 };
 
-export default allMoviesData;
+export default AllMoviesData;
