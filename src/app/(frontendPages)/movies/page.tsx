@@ -3,7 +3,7 @@ import React from "react";
 import AllMoviesData from "../../../data/AllMoviesData";
 
 const page = () => {
-  return (
+  return (F
     <div className="bg-[#2F2F39]">
       <div className="w-[80%] m-auto py-4 ">
         <h1 className="text-2xl py-4 text-center text-white font-bold">All List Movies</h1>
