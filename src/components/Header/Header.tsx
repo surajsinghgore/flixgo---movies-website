@@ -33,8 +33,8 @@ const Header = () => {
           <Link href="#" className="text-sm/6 font-sm text-white">
             PRICING PLAN
           </Link>
-          <Link href="#" className="text-sm/6 font-sm text-white">
-            HELP
+          <Link href="/movies" className="text-sm/6 font-sm text-white">
+           MOVIES
           </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
